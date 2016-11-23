@@ -1,0 +1,42 @@
+.button {
+    // box model
+    display: inline-block;
+    height: 48px;
+    padding: 7px 20px; 
+
+    // typography
+    color: $darkCopy;
+    font-family: $mainFont;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    // visual
+    border: 1px solid $blueBorder;
+    border-radius: 24px;
+
+    &--light {
+        // box model
+        padding-top: 9px;
+
+        // typography
+        font-weight: 400;
+
+        // visual
+        background-color: #ffffff;
+        border: none;
+    }
+
+    &--dark {
+        // box model
+        padding-top: 8px;
+        
+        // typography
+        color: #ffffff;
+        font-weight: 400;
+
+        // visual
+        background-color: $blueBackground;
+        border: none;
+    }
+}

@@ -1,0 +1,58 @@
+.hero {
+    // positioning
+    position: relative;
+
+    // border: 1px solid red;
+    // box model
+    width: 100%;
+    @media (min-width: $tablet) {
+        height: 600px;
+    }
+    @media (min-width: $desktop) {
+        height: 800px;
+    }
+
+    // visual
+    overflow: hidden;
+
+    &__text-content {
+        // border: 1px solid red;
+        // positioning
+        position: absolute;
+        bottom: 70px;
+        right: 70px;
+
+        // typography
+        text-align: right;
+    }
+
+    &__image {
+        // positioning
+        position: absolute;
+        left: 50%;
+        top: 50%;
+
+        // box model
+        display: block;
+        margin-left: -960px;
+        margin-top: -540px;
+    }
+
+    &__title {
+        // typography
+        color: #ffffff;
+        font-family: $mainFont;
+        font-weight: 800;
+        font-size: 3rem;
+        line-height: 1.5;
+    }
+
+    &__subtitle {
+        // typography
+        color: #ffffff;
+        font-family: $mainFont;
+        font-weight: 400;
+        font-size: 1.75rem;
+        line-height: 1.5;
+    }
+}

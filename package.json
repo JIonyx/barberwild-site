@@ -25,7 +25,11 @@
   },
   "homepage": "https://github.com/nigel-riss/barberwild-site#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.11",
+    "sass-module-importer": "^1.4.0"
   },
   "dependencies": {
     "jquery": "^3.1.1",
