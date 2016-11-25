@@ -1,0 +1,17 @@
+.footer {
+    // typography
+    font-size: 0;
+    text-align: center;
+
+    .footer__logo {
+        // box model
+        height: 142px;
+        width: 176px;
+        margin: 0 auto;
+
+        & img {
+            // box model
+            width: 100%;
+        }
+    }
+}

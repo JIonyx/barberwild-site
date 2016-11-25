@@ -3,9 +3,17 @@
 
 //base
 @import "base/vars";
+@import "base/mixins";
 @import "base/global";
 
 //blocks
 @import "modules/hero";
 @import "modules/button";
+@import "modules/site-header";
+@import "modules/main-menu";
+@import "modules/shop-item";
+@import "modules/footer";
+@import "modules/footer-menu";
+@import "modules/social";
+@import "modules/copyrights";
 

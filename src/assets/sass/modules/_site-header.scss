@@ -1,0 +1,28 @@
+.site-header {
+    // border: 1px solid red;
+    // positioning
+    position: absolute;
+    z-index: 2;
+
+    // box model
+    padding: 0 70px;
+    padding-top: 40px;
+    width: 100%;
+
+    &__logo {
+        // box model
+        height: 142px;
+        width: 176px;
+        float: left;
+
+        & img {
+            // box model
+            width: 100%;
+        }
+    }
+
+    &__logo-fallback {
+        // box model
+        display: none;
+    }
+}

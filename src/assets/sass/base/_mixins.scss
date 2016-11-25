@@ -1,0 +1,9 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+
+        // box model
+        display: table;
+        width: 100%;
+    }
+}

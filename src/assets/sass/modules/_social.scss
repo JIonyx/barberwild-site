@@ -1,0 +1,18 @@
+.social {
+    // box model
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+
+    &__icon {
+        // box model
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        margin: 0 5px;
+        
+        // visual
+        border: 1px solid $blueBorder;
+        border-radius: 50%;
+    }
+}

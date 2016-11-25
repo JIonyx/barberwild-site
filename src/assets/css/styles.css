@@ -475,3 +475,119 @@ body {
     font-weight: 400;
     background-color: #416375;
     border: none; }
+
+.site-header {
+  position: absolute;
+  z-index: 2;
+  padding: 0 70px;
+  padding-top: 40px;
+  width: 100%; }
+  .site-header__logo {
+    height: 142px;
+    width: 176px;
+    float: left; }
+    .site-header__logo img {
+      width: 100%; }
+  .site-header__logo-fallback {
+    display: none; }
+
+.main-menu {
+  float: right; }
+  .main-menu__list {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    text-align: right;
+    list-style: none; }
+  .main-menu__item {
+    position: relative;
+    display: inline-block;
+    padding-left: 40px;
+    font-size: 18px; }
+    .main-menu__item a {
+      position: relative;
+      color: white;
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none; }
+      .main-menu__item a:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5); }
+
+.shop-item {
+  display: flex;
+  align-content: flex-end; }
+  .shop-item--alternate {
+    flex-direction: row-reverse; }
+  .shop-item__image {
+    position: relative;
+    height: 600px;
+    width: 375px; }
+    .shop-item__image img {
+      position: absolute;
+      right: 0; }
+  .shop-item__description {
+    position: relative;
+    padding-top: 80px;
+    width: 625px; }
+  .shop-item__caption {
+    padding: 0;
+    margin: 0;
+    color: #152026;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 1.5; }
+  .shop-item__text {
+    color: #152026;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 1.6; }
+
+.footer {
+  font-size: 0;
+  text-align: center; }
+  .footer .footer__logo {
+    height: 142px;
+    width: 176px;
+    margin: 0 auto; }
+    .footer .footer__logo img {
+      width: 100%; }
+
+.footer-menu {
+  background-color: #152026; }
+  .footer-menu__list {
+    padding: 5px 0;
+    list-style: none; }
+  .footer-menu__item {
+    display: inline-block;
+    padding: 15px; }
+    .footer-menu__item a {
+      color: #ffffff;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 100;
+      font-size: 1.125rem;
+      text-decoration: none; }
+
+.social {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin: 0 auto; }
+  .social__icon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    border: 1px solid #969b9d;
+    border-radius: 50%; }
+
+.copyrights {
+  padding: 10px 0;
+  font-size: 0.875rem;
+  font-weight: 100; }
