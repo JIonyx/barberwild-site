@@ -1,0 +1,57 @@
+.promo-item {
+    // border: 1px solid red;
+
+    &__description {
+        // positioning
+        position: absolute;
+        left: -9999px;
+        right: -9999px;
+
+        // box model
+        width: $desktop;
+        margin: auto;
+        padding-top: 160px;
+    }
+
+    &__caption {
+        // box model
+        width: 625px;
+        margin: 0;
+
+        // typography
+        color: #ffffff;
+        font-family: $mainFont;
+        font-size: 3rem;
+        font-weight: 100;
+        line-height: 1.5;
+    }
+
+    &__text {
+        // box model
+        width: 450px;
+
+        // typography
+        color: #ffffff;
+        font-family: $mainFont;
+        font-size: 1.125rem;
+        font-weight: 100;
+        line-height: 1.6;
+    }
+
+    &__image {
+        // positioning
+        position: absolute;
+        left: -9999px;
+        right: -9999px;
+
+        // box model
+        width: 1920px;
+        margin: auto;
+
+        & img {
+            // box model
+            width: 100%;
+            height: auto;
+        }
+    }
+}

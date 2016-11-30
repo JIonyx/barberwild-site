@@ -1,0 +1,22 @@
+.section {
+    // box model
+    padding: 40px 0;
+
+    &--dark {
+        // visual
+        background-color: #000000;
+    }
+
+    &--promo {
+        // positioning
+        position: relative;
+
+        // box model
+        height: 800px;
+        padding: 0;
+        // border: 1px solid red;
+
+        // visual
+        overflow: hidden;
+    }
+}
