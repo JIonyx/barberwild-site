@@ -2,14 +2,14 @@
     // box model
     display: inline-block;
     height: 48px;
-    padding: 7px 20px;
+    padding: 14px 25px;
     margin-right: 30px;
 
     // typography
     color: $darkCopy;
-    font-family: $mainFont;
+    font-family: $boldFont;
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     text-decoration: none;
 
     // visual
@@ -18,7 +18,7 @@
 
     &--light {
         // box model
-        padding-top: 9px;
+        padding-top: 15px;
 
         // typography
         font-weight: 400;
@@ -30,7 +30,7 @@
 
     &--dark {
         // box model
-        padding-top: 8px;
+        padding-top: 15px;
         
         // typography
         color: #ffffff;
@@ -45,11 +45,17 @@
         // typography
         color: #ffffff;
     }
+
+    &--no-margin {
+        // box model
+        margin-right: 0;
+    }
 }
 
 .button-block {
     // box model
-    padding: 60px 0;
+    margin-top: 20px;
+    padding-top: 20px;
 
     // typography
     font-size: 0;

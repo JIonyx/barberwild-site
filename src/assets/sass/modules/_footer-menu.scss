@@ -1,6 +1,7 @@
 .footer-menu {
     // visual
     background-color: $darkCopy;
+    box-shadow: 0 0 20px 0 $darkCopy;
 
     &__list {
         // box model
@@ -18,9 +19,9 @@
         & a {
             // typography
             color: #ffffff;
-            font-family: $mainFont;
+            font-family: $boldFont;
             font-weight: 100;
-            font-size: 1.125rem;
+            font-size: 1rem;
             text-decoration: none;
         }
     }

@@ -5,15 +5,23 @@
     z-index: 2;
 
     // box model
-    padding: 0 70px;
-    padding-top: 40px;
-    width: 100%;
+    padding: 70px;
+    width: 20%;
+    @media (min-width: $tablet) {
+        height: 600px;
+    }
+    @media (min-width: $desktop) {
+        height: 800px;
+    }
+
+    &--page {
+        height: 600px;
+    }
 
     &__logo {
         // box model
         height: 142px;
         width: 176px;
-        float: left;
 
         & img {
             // box model

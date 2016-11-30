@@ -14,6 +14,11 @@
 
     // visual
     overflow: hidden;
+    box-shadow: 0 0 20px 0 $darkCopy;
+
+    &--page {
+        height: 600px;
+    }
 
     &__text-content {
         // border: 1px solid red;
@@ -29,25 +34,43 @@
     &__image {
         // positioning
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: -9999px;
+        right: -9999px;
+        // top: -9999px;
+        // bottom: -9999px;
+        // left: 50%;
+        // top: 50%;
 
         // box model
         display: block;
-        margin-left: -960px;
-        margin-top: -540px;
+        width: 1920px;
+        margin: auto;
+        // margin-left: -960px;
+        // margin-top: -540px;
     }
 
     &__title {
+        // box model
+        margin: 0;
+
         // typography
         color: #ffffff;
-        font-family: $mainFont;
+        font-family: $boldFont;
         font-weight: 800;
         font-size: 3rem;
         line-height: 1.5;
+
+        & small {
+            // typography
+            font-size: 2.25rem;
+        }
     }
 
     &__subtitle {
+        // box model
+        margin: 0;
+        // margin-bottom: 40px;
+
         // typography
         color: #ffffff;
         font-family: $mainFont;
