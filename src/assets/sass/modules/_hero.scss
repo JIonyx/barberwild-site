@@ -9,15 +9,25 @@
         height: 600px;
     }
     @media (min-width: $desktop) {
-        height: 800px;
+        height: 100vh;
     }
 
     // visual
     overflow: hidden;
     box-shadow: 0 0 20px 0 $darkCopy;
+    background-color: $darkCopy;
 
     &--page {
         height: 600px;
+    }
+
+    &--map {
+        // positioning
+        position: relative;
+
+        // box model
+        height: 100vh;
+        min-height: 960px;
     }
 
     &__text-content {
@@ -36,17 +46,25 @@
         position: absolute;
         left: -9999px;
         right: -9999px;
-        // top: -9999px;
-        // bottom: -9999px;
-        // left: 50%;
-        // top: 50%;
+        top: -9999px;
+        bottom: -9999px;
 
         // box model
         display: block;
         width: 1920px;
         margin: auto;
-        // margin-left: -960px;
-        // margin-top: -540px;
+    }
+
+    &__map {
+        // box model
+        width: 100%;
+
+        img {
+            // box model
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
     }
 
     &__title {

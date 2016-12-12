@@ -6,49 +6,60 @@
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Barber WILD</title>
+
+    <script src="https://use.fontawesome.com/3e6c3ee5bf.js"></script>
 </head>
 <body>
     <header class="site-header">
         <div class="site-header__logo">
-            <img src="./assets/img/logo.png" alt="Barber WILD logo">
+            <!--<img src="./assets/img/logo.png" alt="Barber WILD logo">-->
             <div class="site-header__logo-fallback">Barber WILD</div>
         </div>
 
-        <nav class="main-menu">
+        <nav class="main-menu  main-menu--main-page">
             <ul class="main-menu__list">
                 <li class="main-menu__item">
-                    <a href="#">О нас</a>
+                    <a href="about.html">О нас</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#">Магазин</a>
+                    <a href="shop.html">Магазин</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#">Сотрудничество</a>
+                    <a href="coop.html">Сотрудничество</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#">Акции</a>
+                    <a href="promos.html">Акции</a>
                 </li>
                 <li class="main-menu__item">
-                    <a href="#">Корзина</a>
+                    <a href="cart.html">Корзина</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <div class="for-owners">
-        <a href="#">
+        <a href="coop.html">
             <img src="./assets/img/for-owners.png" alt="Для владельцев барбершопов">
         </a>
     </div>
 
     <div class="hero">
-        <img class="hero__image" src="./assets/img/background-main.jpg" alt="">
+        <!--<img class="hero__image" src="./assets/img/background-main.jpg" alt="">-->
+        <div class="scene">
+            <img class="scene__background" src="./assets/img/hero/background.jpg" alt="">
+            <img class="scene__signboard" src="./assets/img/hero/signboard.png" alt="" >
+            <img class="scene__bar" src="./assets/img/hero/bar.png" alt="">
+            <img class="scene__lamps" src="./assets/img/hero/lamps.png" alt="">
+            <img class="scene__wild" src="./assets/img/hero/wild.png" alt="">
+
+            <!--<div class="scene__helper"></div>-->
+        </div>
         <div class="hero__text-content">
             <h1 class="hero__title  hero__title--right">«Barber WILD»<br><small> — то, что нужно для твоей головы</small></h1>
-            <p class="hero__subtitle hero__sub-title--right">Мужская косметика с характером,<br> почувствуй дух дикого запада.</p>
-            <div class="button-block">
+            <p class="hero__subtitle hero__sub-title--right">Мужская косметика с характером<!--,<br> почувствуй дух дикого запада-->.</p>
+            <!--<div class="button-block">
                 <a class="button button--light button--no-margin" href="#">подробнее о «Barber WILD»</a>
-            </div>
+            </div>-->
         </div>
     </div>
 
@@ -64,7 +75,7 @@
                             Масло для бритья<br>
                             «Barber WILD»
                         </h2>
-                        <p class="shop-item__text">Нанесите масло для бритья «Barber WILD» сразу после бритья на лицо и шею. Увлажняет и убирает раздражение и покраснение. Ускоряет заживление царапин и порезов.</p>
+                        <p class="shop-item__text">Нанесите масло для бритья «Barber WILD» сразу после бритья на лицо и шею. Увлажняет и убирает раздражение и покраснение. Ускоряет заживление царапин и порезов. <i class="fa fa-vk" aria-hidden="true"></i></p>
                         <div class="button-block">
                             <a href="#" class="button button--outline">подробнее</a>
                             <a href="#" class="button button--dark">в корзину</a>
@@ -135,9 +146,9 @@
             <img src="./assets/img/logo-footer.png" alt="Barber WILD logo">
         </div>
         <div class="social">
-            <a href="#" class="social__icon  social__icon--fb">facebook</a>
-            <a href="#" class="social__icon  social__icon--vk">vkontakte</a>
-            <a href="#" class="social__icon  social__icon--inst">instagram</a>
+            <a href="#" class="social__icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social__icon"><i class="fa fa-vk" aria-hidden="true"></i></a>
+            <a href="#" class="social__icon"><i class="fa fa-instagram" aria-hidden="true"></i></a>
         </div>
 
         <nav class="footer-menu">
@@ -155,7 +166,7 @@
                     <a href="#">Советы</a>
                 </li>
                 <li class="footer-menu__item">
-                    <a href="#">Найти магазин</a>
+                    <a href="find-shop.html">Найти магазин</a>
                 </li>
                 <li class="footer-menu__item">
                     <a href="#">Блог</a>

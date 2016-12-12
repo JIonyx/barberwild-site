@@ -2,9 +2,15 @@
     // positioning
     position: absolute;
     bottom: 70px;
+    // border: 1px solid red;
 
     // box model
     // border: 1px solid green;
+
+    &--main-page {
+        top: 70px;
+        bottom: auto;
+    }
 
     &__list {
         // box model
@@ -38,7 +44,10 @@
             font-family: $boldFont;
             text-decoration: none;
 
-            
+            &:hover {
+                // visual
+                opacity: 0.8;
+            }
         }
     }
 }

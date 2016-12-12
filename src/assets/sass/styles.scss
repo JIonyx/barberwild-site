@@ -1,3 +1,5 @@
+// preloader
+@import "modules/preloader";
 // globals
 @import "normalize.css";
 
@@ -8,6 +10,7 @@
 
 //blocks
 @import "modules/hero";
+@import "modules/scene";
 @import "modules/button";
 @import "modules/site-header";
 @import "modules/main-menu";
@@ -20,4 +23,5 @@
 @import "modules/copyrights";
 @import "modules/section";
 @import "modules/promo-item";
+@import "modules/map-marker";
 

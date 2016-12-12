@@ -1,3 +1,51 @@
+.preloader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%; }
+
+.preloader {
+  position: absolute;
+  z-index: 1001;
+  top: 50%;
+  right: 0;
+  left: 0;
+  margin: auto; }
+  .preloader__image {
+    display: block;
+    margin: 0 auto;
+    transform: translateY(-50%); }
+
+.preloader__section {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 51%;
+  height: 100%;
+  background-color: #222; }
+  .preloader__section--left {
+    left: 0; }
+  .preloader__section--right {
+    right: 0; }
+
+.loaded .preloader {
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loaded .preloader__section--left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.7s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loaded .preloader__section--right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.7s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loaded .preloader-wrapper {
+  transform: translateY(-100%);
+  transition: all 0.1s 1.4s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -422,15 +470,20 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 0 20px 0 #152026; }
+  box-shadow: 0 0 20px 0 #152026;
+  background-color: #152026; }
   @media (min-width: 768px) {
     .hero {
       height: 600px; } }
   @media (min-width: 1224px) {
     .hero {
-      height: 800px; } }
+      height: 100vh; } }
   .hero--page {
     height: 600px; }
+  .hero--map {
+    position: relative;
+    height: 100vh;
+    min-height: 960px; }
   .hero__text-content {
     position: absolute;
     bottom: 70px;
@@ -440,9 +493,17 @@ body {
     position: absolute;
     left: -9999px;
     right: -9999px;
+    top: -9999px;
+    bottom: -9999px;
     display: block;
     width: 1920px;
     margin: auto; }
+  .hero__map {
+    width: 100%; }
+    .hero__map img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
   .hero__title {
     margin: 0;
     color: #ffffff;
@@ -460,6 +521,56 @@ body {
     font-size: 1.75rem;
     line-height: 1.5; }
 
+@keyframes neon {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.7; }
+  100% {
+    opacity: 1; } }
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: yellow; }
+  .scene__background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 100%; }
+  .scene__signboard {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 100%;
+    animation-name: neon;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; }
+  .scene__bar {
+    position: absolute;
+    display: block;
+    width: 100%; }
+  .scene__lamps {
+    position: absolute;
+    display: block;
+    width: 100%; }
+  .scene__wild {
+    position: absolute;
+    display: block;
+    width: 100%; }
+  .scene__helper {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    height: 32px;
+    width: 32px;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 50%; }
+
 .button {
   display: inline-block;
   height: 48px;
@@ -472,6 +583,8 @@ body {
   text-decoration: none;
   border: 1px solid #969b9d;
   border-radius: 24px; }
+  .button:hover {
+    opacity: 0.8; }
   .button--light {
     padding-top: 15px;
     font-weight: 400;
@@ -503,7 +616,10 @@ body {
       height: 600px; } }
   @media (min-width: 1224px) {
     .site-header {
-      height: 800px; } }
+      height: 100vh; } }
+  .site-header--map {
+    height: 100vh;
+    min-height: 960px; }
   .site-header--page {
     height: 600px; }
   .site-header__logo {
@@ -517,6 +633,9 @@ body {
 .main-menu {
   position: absolute;
   bottom: 70px; }
+  .main-menu--main-page {
+    top: 70px;
+    bottom: auto; }
   .main-menu__list {
     padding: 0;
     margin: 0;
@@ -531,6 +650,8 @@ body {
       color: white;
       font-family: "Intro", Arial, sans-serif;
       text-decoration: none; }
+      .main-menu__item a:hover {
+        opacity: 0.8; }
 
 .for-owners {
   position: absolute;
@@ -542,6 +663,8 @@ body {
   .for-owners img {
     width: 100%;
     height: auto; }
+  .for-owners:hover {
+    opacity: 0.8; }
 
 .shop-item {
   display: flex;
@@ -583,8 +706,6 @@ body {
   width: 470px;
   display: inline-block;
   vertical-align: top; }
-  .faq-item i {
-    font-style: normal; }
   .faq-item--alternate {
     margin-left: 300px; }
   .faq-item--top {
@@ -617,7 +738,8 @@ body {
     font-family: "Intro", Arial, sans-serif;
     font-size: 18.75rem;
     font-weight: 900;
-    line-height: 1; }
+    line-height: 1;
+    user-select: none; }
 
 .small-questions {
   margin: 0 auto;
@@ -650,6 +772,8 @@ body {
       font-weight: 100;
       font-size: 1rem;
       text-decoration: none; }
+      .footer-menu__item a:hover {
+        opacity: 0.8; }
 
 .social {
   padding-top: 20px;
@@ -660,17 +784,18 @@ body {
     height: 30px;
     width: 30px;
     margin: 0 5px;
+    padding: 4px;
+    color: #152026;
+    font-size: 1.125rem;
     border: 1px solid #969b9d;
     border-radius: 50%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 16px 16px; }
-    .social__icon--fb {
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiBoZWlnaHQ9IjMwcHgiIGlkPSJGYWNlYm9vayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48cGF0aCBkPSJNMjIsMTZsMS01bC01LDAuMDAxVjdjMC0xLjU0NCwwLjc4NC0yLDMtMmgyVjBjMCwwLTIuMDUsMC00LDBjLTQuMDcyLDAtNywyLjQzNS03LDd2NGwtNSwwdjVoNXYxNGg2VjE2SDIyeiIgaWQ9ImYiLz48L2c+PC9zdmc+); }
-    .social__icon--vk {
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiBoZWlnaHQ9IjMwcHgiIGlkPSJWa29udGFrdGUiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMwIDMwIiB3aWR0aD0iMzBweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTYsMjRjMSwwLDEtMS40NDEsMS0yYzAtMSwxLTIsMi0yczIuNzE1LDEuNzE1LDQsM2MxLDEsMSwxLDIsMXMzLDAsMywwICBzMi0wLjA3NiwyLTJjMC0wLjYyNS0wLjY4NS0xLjY4NS0zLTRjLTItMi0zLjAyNi0wLjk2NywwLTVjMS44NDMtMi40NTYsMy4xODQtNC42ODEsMi45NTQtNS4zMjNDMjkuNzM0LDcuMDY0LDI0LjYwOCw2LjA4OCwyNCw3ICBjLTIsMy0yLjM2NywzLjczNS0zLDVjLTEsMi0xLjA5OSwzLTIsM2MtMC45MDksMC0xLTEuOTQxLTEtM2MwLTMuMzA2LDAuNDc5LTUuNjQ0LTEtNmMwLDAtMiwwLTMsMGMtMS42MSwwLTMsMS0zLDEgIHMtMS4yNDEsMC45NjgtMSwxYzAuMjk4LDAuMDQsMi0wLjQxNCwyLDFjMCwxLDAsMiwwLDJzMC4wMDksNC0xLDRjLTEsMC0zLTQtNS03QzUuMjE1LDYuODIzLDUsNyw0LDdDMi45MjgsNywyLjAwMSw3LjA0MiwxLDcuMDQyICBDMCw3LjA0Mi0wLjEyOCw3LjY3OSwwLDhjMiw1LDMuNDM3LDguMTQsNy4yMzcsMTIuMDk2QzEwLjcyMiwyMy43MjUsMTMuMDUsMjMuOTE4LDE1LDI0QzE1LjUsMjQuMDIxLDE1LDI0LDE2LDI0eiIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iVksiLz48L3N2Zz4=); }
-    .social__icon--inst {
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDMwIiBoZWlnaHQ9IjMwcHgiIGlkPSJJbnN0YWdyYW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDMwIDMwIiB3aWR0aD0iMzBweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGc+PHBhdGggZD0iTTI2LDBDMjYsMCwzLjUyOSwwLDMuNSwwQzEuNTgyLDAsMC4wMjcsMS41ODYsMC4wMDQsMy41TDAsMy40NThjMCwwLDAsMjMuMDI4LDAsMjMuMDQyICAgIEMwLDI4LjQzNCwxLjU2NywzMCwzLjUsMzBjMC4wMTQsMCwyMywwLDIzLDBjMS44NzMtMC4wNjcsMy41LTEuNjA5LDMuNS0zLjVjMC0wLjAxNCwwLTIzLDAtMjNDMjkuOTc4LDEuNjI5LDI3Ljg1OSwwLjA2NywyNiwweiAgICAgTTE1LDkuNWMzLjAzOCwwLDUuNSwyLjQ2Myw1LjUsNS41YzAsMy4wMzYtMi40NjIsNS41LTUuNSw1LjVjLTMuMDM3LDAtNS41LTIuNDY0LTUuNS01LjVDOS41LDExLjk2MywxMS45NjMsOS41LDE1LDkuNXogTTI2LDI0ICAgIGMwLDEuMTA0LTAuODk2LDItMiwySDZjLTEuMTA0LDAtMi0wLjg5Ni0yLTJWMTIuNWgyLjM1OUM2LjEzLDEzLjI5NCw2LDE0LjEzMiw2LDE1YzAsNC45Nyw0LjAzMSw5LDksOWM0Ljk3MiwwLDktNC4wMyw5LTkgICAgYzAtMC44NjgtMC4xMy0xLjcwNi0wLjM1OS0yLjVIMjZsLTAuMDA0LDExLjQ2MUMyNS45OTYsMjMuOTc1LDI2LDIzLjk4NiwyNiwyNHogTTI2LDUuMDA4djMuMDE2aC0wLjAwNSAgICBjLTAuMDEzLDAuNTM1LTAuNDQyLDAuOTY1LTAuOTc5LDAuOTc0VjlIMjJjLTAuNTQ1LDAtMC45ODItMC40MzYtMC45OTUtMC45NzdIMjFWNS4wMDhoMC4wMDJDMjEuMDAyLDUuMDA1LDIxLDUuMDAzLDIxLDUgICAgYzAtMC41NTIsMC40NDctMSwxLTFoMy4wMTZ2MC4wMDNDMjUuNTYxLDQuMDEyLDI2LDQuNDUzLDI2LDVjMCwwLjAwMy0wLjAwMiwwLjAwNS0wLjAwMiwwLjAwOEgyNnoiIGlkPSJDYW1lcmEiLz48L2c+PC9zdmc+); }
+    .social__icon:hover {
+      color: #ffffff;
+      background-color: #152026;
+      border: 1px solid #152026; }
 
 .copyrights {
   padding: 10px 0;
@@ -722,3 +847,42 @@ body {
   .promo-item__image img {
     width: 100%;
     height: auto; }
+
+.map-marker {
+  position: absolute;
+  z-index: 3;
+  font-size: 32px; }
+  .map-marker:hover > .map-marker__description {
+    display: block; }
+  .map-marker__marker {
+    display: block;
+    color: #ffffff;
+    cursor: pointer; }
+  .map-marker__description {
+    position: absolute;
+    left: 10px;
+    display: none;
+    padding: 20px;
+    padding-bottom: 10px;
+    min-width: 300px;
+    background-color: #f1f1f1; }
+  .map-marker__city-name {
+    font-family: "Intro", Arial, sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    margin-bottom: 15px; }
+  .map-marker__address {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5; }
+  .map-marker--kld {
+    top: 515px;
+    left: 165px; }
+  .map-marker--msk {
+    top: 580px;
+    left: 470px; }
+  .map-marker--spb {
+    top: 465px;
+    left: 295px; }

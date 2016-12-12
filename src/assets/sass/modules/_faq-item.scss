@@ -10,11 +10,6 @@
     // -webkit-column-span: all;
     // column-span: all;
 
-    & i {
-        // typography
-        font-style: normal;
-    }
-
     &--alternate {
         margin-left: 300px;
     }
@@ -73,6 +68,7 @@
         font-size: 18.75rem;
         font-weight: 900;
         line-height: 1;
+        user-select: none;
     }
 }
 

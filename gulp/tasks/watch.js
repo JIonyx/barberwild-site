@@ -24,7 +24,12 @@ gulp.task('watch', function() {
     })
 
     watch('./src/assets/css/**/*.css', function() {
-        console.log('sass works');
-        gulp.start('cssInject');
+        // console.log('sass works');
+        // gulp.start('cssInject');
+        browserSync.reload();
     });
+
+    watch('./src/js/**/*.js', function() {
+        browserSync.reload();
+    })
 });

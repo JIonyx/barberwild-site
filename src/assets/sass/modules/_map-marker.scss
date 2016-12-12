@@ -1,0 +1,76 @@
+.map-marker {
+    // positioning
+    position: absolute;
+    z-index: 3;
+
+    font-size: 32px;
+
+    &:hover > .map-marker__description{
+        display: block;
+    }   
+
+    &__marker {
+        // border: 1px solid red;
+        // box model
+        display: block;
+
+        // typography
+        color: #ffffff;
+
+        cursor: pointer;
+    }
+
+    &__description {
+        // positioning
+        position: absolute;
+        left: 10px;
+
+        // box model
+        display: none;
+        padding: 20px;
+        padding-bottom: 10px;
+        min-width: 300px;
+
+        background-color: #f1f1f1;
+    }
+
+    &__city-name {
+        // typography
+        font-family: $boldFont;
+        font-size: 1.25rem;
+
+        // box model
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    &__address {
+        // box model
+        margin: 0;
+        margin-bottom: 10px;
+
+        // typography
+        font-family: $mainFont;
+        font-size: 1rem;
+        // font-weight: 300;
+        line-height: 1.5;
+    }
+
+    &--kld {
+        // positioning
+        top: 515px;
+        left: 165px; 
+    }
+
+    &--msk {
+        // positioning
+        top: 580px;
+        left: 470px;
+    }
+
+    &--spb {
+        // positioning
+        top: 465px;
+        left: 295px;
+    }
+}
