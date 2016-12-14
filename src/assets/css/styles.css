@@ -474,10 +474,8 @@ body {
   background-color: #152026; }
   @media (min-width: 768px) {
     .hero {
-      height: 600px; } }
-  @media (min-width: 1224px) {
-    .hero {
-      height: 100vh; } }
+      height: 600px;
+      height: 49.7vw; } }
   .hero--page {
     height: 600px; }
   .hero--map {
@@ -525,25 +523,21 @@ body {
   0% {
     opacity: 1; }
   50% {
-    opacity: 0.7; }
+    opacity: 0.6; }
   100% {
     opacity: 1; } }
 
 .scene {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: yellow; }
+  width: 104%;
+  height: 49.7vw;
+  background-color: #000000; }
   .scene__background {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     display: block;
     width: 100%; }
   .scene__signboard {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     display: block;
     width: 100%;
     animation-name: neon;
@@ -562,6 +556,12 @@ body {
     position: absolute;
     display: block;
     width: 100%; }
+  .scene__chairs {
+    position: absolute;
+    display: block;
+    width: 100%; }
+  .scene__sprite {
+    position: absolute; }
   .scene__helper {
     position: absolute;
     top: 100px;

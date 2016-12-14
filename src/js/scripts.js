@@ -1,53 +1,92 @@
 ;
-setTimeout(function(){
-    $('body').addClass('loaded');
-});
+window.onload = function() {
+    // alert(window.innerWidth + '  ' + window.innerHeight);
+    setTimeout(function(){
+        $('body').addClass('loaded');
+    });
+
+    // Bar scene parallax
+    let scene = document.querySelector('.scene');
+    let background = document.querySelector('.scene__background');
+    let signboard = document.querySelector('.scene__signboard');
+    let bar  = document.querySelector('.scene__bar');
+    let lamps = document.querySelector('.scene__lamps');
+    let wild = document.querySelector('.scene__wild');
+    let wildOriginalX = wild.offsetLeft;
+    let wildOriginalH = wild.offsetHeight;
+    let chairs = document.querySelector('.scene__chairs');
+    parallaxY(0);
 
 
+    document.onmousemove = function(event) {
+        parallaxX(event.x);
+        // parallaxY(event.y);
+    }
 
-// Bar scene parallax
-let scene = document.querySelector('.scene');
-let signboard = document.querySelector('.scene__signboard');
-let bar  = document.querySelector('.scene__bar');
-let lamps = document.querySelector('.scene__lamps');
-let wild = document.querySelector('.scene__wild');
-let wildOriginalX = wild.offsetLeft;
-let wildOriginalH = wild.offsetHeight;
-parallaxY(0);
 
-// let helper = document.querySelector('.scene__helper');
+    function parallaxX(dx) {
+        let sceneWidth = scene.offsetWidth;
+        // let mouseDX = dx - sceneWidth * 0.5;
+        let mouseDX = dx;
+        let shiftDX = -mouseDX * 0.04 // div 25
+        chairs.style.left = shiftDX * 2 + "px";
+        wild.style.left = shiftDX + "px";
+        bar.style.left = shiftDX + "px";
+        lamps.style.left = shiftDX * 0.125 + "px"; // div 8
+        background.style.left = signboard.style.left = shiftDX * 0.0625 + "px"; // div 16
+        // = shiftDX * 0.0625 + "px"; // div 16
+    }
 
-document.onmousemove = function(event) {
-    // helper.style.left = event.x + "px";
-    // helper.style.top = event.y + "px";
 
-    // console.log(wildOriginalX); 
-    parallaxX(event.x);
-    parallaxY(event.y);
+    function parallaxY(dy) {
+        let sceneHeight = scene.offsetHeight;
+        let mouseDY = Math.min(dy, sceneHeight) - sceneHeight / 2;
+        let originalTop = sceneHeight / 2 - wildOriginalH / 2;
+        wild.style.top = (originalTop - mouseDY / 25) + "px";
+        bar.style.top = (originalTop - mouseDY / 50) + "px";
+        lamps.style.top = (originalTop - mouseDY / 200) + "px";
+        background.style.top = (originalTop - mouseDY / 400) + "px";
+        signboard.style.top = (originalTop - mouseDY / 400) + "px";
+    }
+
+    let sprites = document.querySelectorAll('.scene__sprite');
+    for (let i = 0; i < sprites.length; i++){
+        sprites[i].style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+        sprites[i].style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+    }
+
+    function animateSprites() {
+        window.requestAnimationFrame(animateSprites);
+        console.log(sprites[2].offsetTop);
+    }
+    animateSprites();
 }
 
-// alert(scene.offsetWidth + "   " + scene.offsetHeight);
-
-function parallaxX(dx) {
-    let sceneWidth = scene.offsetWidth;
-    let mouseDX = dx - sceneWidth / 2;
-    wild.style.left = (-mouseDX / 25) + "px";
-    bar.style.left = (-mouseDX / 25) + "px";
-    lamps.style.left = (-mouseDX / 200) + "px";
+// vectors
+function Vector2D(x, y) {
+    this.x = x || 0;
+    this.y = y || 0;
 }
 
-
-function parallaxY(dy) {
-    let sceneHeight = scene.offsetHeight;
-    let mouseDY = Math.min(dy, sceneHeight) - sceneHeight / 2;
-    let originalTop = sceneHeight / 2 - wildOriginalH / 2;
-    wild.style.top = (originalTop - mouseDY / 25) + "px";
-    bar.style.top = (originalTop - mouseDY / 50) + "px";
-    lamps.style.top = (originalTop - mouseDY / 200) + "px";
+Vector2D.prototype.getlength = function() {
+    return Math.sqrt(this.getLengthSquare());
 }
 
+Vector2D.prototype.getLengthSquare = function() {
+    return this.x * this.x + this.y * this.y;
+}
 
+Vector2D.prototype.multiply = function() {
 
+}
+
+Vector2D.prototype.devide = function() {
+
+}
+
+Vector2D.prototype.normalize = function() {
+
+}
 
 
 

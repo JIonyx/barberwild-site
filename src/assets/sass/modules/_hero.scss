@@ -7,10 +7,11 @@
     width: 100%;
     @media (min-width: $tablet) {
         height: 600px;
+        height: 49.7vw;
     }
-    @media (min-width: $desktop) {
-        height: 100vh;
-    }
+    // @media (min-width: $desktop) {
+    //     height: 100vh;
+    // }
 
     // visual
     overflow: hidden;
