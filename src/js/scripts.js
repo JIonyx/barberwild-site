@@ -1,39 +1,47 @@
 ;
-window.onload = function() {
+$(document).ready(function() {
     // alert(window.innerWidth + '  ' + window.innerHeight);
     setTimeout(function(){
         $('body').addClass('loaded');
     });
-
+    
     // Bar scene parallax
-    let scene = document.querySelector('.scene');
-    let background = document.querySelector('.scene__background');
-    let signboard = document.querySelector('.scene__signboard');
-    let bar  = document.querySelector('.scene__bar');
-    let lamps = document.querySelector('.scene__lamps');
-    let wild = document.querySelector('.scene__wild');
-    let wildOriginalX = wild.offsetLeft;
-    let wildOriginalH = wild.offsetHeight;
-    let chairs = document.querySelector('.scene__chairs');
-    parallaxY(0);
+    let $scene       = $('.scene');
+    let $background  = $('.scene__background');
+    let $signboard   = $('.scene__signboard');
+    let $bar         = $('.scene__bar');
+    let $lamps       = $('.scene__lamps');
+    let $wild        = $('.scene__wild');
+    let $chairs      = $('.scene__chairs');
 
 
-    document.onmousemove = function(event) {
-        parallaxX(event.x);
+    // let wildOriginalX = wild.offsetLeft;
+    let wildOriginalH = $wild.height();
+    // let chairs = 
+    // parallaxY(0);
+
+
+    $(document).mousemove(function(event) {
+        parallaxX(event.pageX);
         // parallaxY(event.y);
-    }
+        // console.log("!");
+        // console.log(event);
+    })
 
 
     function parallaxX(dx) {
-        let sceneWidth = scene.offsetWidth;
-        // let mouseDX = dx - sceneWidth * 0.5;
-        let mouseDX = dx;
+        let sceneWidth = $scene.width();
+        let mouseDX = dx - sceneWidth * 0.5;
+        // let mouseDX = dx;
         let shiftDX = -mouseDX * 0.04 // div 25
-        chairs.style.left = shiftDX * 2 + "px";
-        wild.style.left = shiftDX + "px";
-        bar.style.left = shiftDX + "px";
-        lamps.style.left = shiftDX * 0.125 + "px"; // div 8
-        background.style.left = signboard.style.left = shiftDX * 0.0625 + "px"; // div 16
+        // chairs.style.left = shiftDX * 2 + "px";
+        $chairs.offset({ top: $chairs.position().top, left: shiftDX * 2 });
+        // $wild.animate({left: shiftDX * 2});
+        // console.log("hehe");
+        // wild.style.left = shiftDX + "px";
+        // bar.style.left = shiftDX + "px";
+        // lamps.style.left = shiftDX * 0.125 + "px"; // div 8
+        // background.style.left = signboard.style.left = shiftDX * 0.0625 + "px"; // div 16
         // = shiftDX * 0.0625 + "px"; // div 16
     }
 
@@ -49,18 +57,18 @@ window.onload = function() {
         signboard.style.top = (originalTop - mouseDY / 400) + "px";
     }
 
-    let sprites = document.querySelectorAll('.scene__sprite');
-    for (let i = 0; i < sprites.length; i++){
-        sprites[i].style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-        sprites[i].style.top = Math.floor(Math.random() * window.innerHeight) + "px";
-    }
+    // let sprites = document.querySelectorAll('.scene__sprite');
+    // for (let i = 0; i < sprites.length; i++){
+    //     sprites[i].style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+    //     sprites[i].style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+    // }
 
     function animateSprites() {
         window.requestAnimationFrame(animateSprites);
-        console.log(sprites[2].offsetTop);
+        // console.log(sprites[2].offsetTop);
     }
     animateSprites();
-}
+});
 
 // vectors
 function Vector2D(x, y) {
