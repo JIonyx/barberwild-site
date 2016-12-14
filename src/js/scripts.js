@@ -26,8 +26,8 @@ window.onload = function() {
 
     function parallaxX(dx) {
         let sceneWidth = scene.offsetWidth;
-        // let mouseDX = dx - sceneWidth * 0.5;
-        let mouseDX = dx;
+        let mouseDX = dx - sceneWidth * 0.5;
+        // let mouseDX = dx;
         let shiftDX = -mouseDX * 0.04 // div 25
         chairs.style.left = shiftDX * 2 + "px";
         wild.style.left = shiftDX + "px";
@@ -42,11 +42,11 @@ window.onload = function() {
         let sceneHeight = scene.offsetHeight;
         let mouseDY = Math.min(dy, sceneHeight) - sceneHeight / 2;
         let originalTop = sceneHeight / 2 - wildOriginalH / 2;
-        wild.style.top = (originalTop - mouseDY / 25) + "px";
-        bar.style.top = (originalTop - mouseDY / 50) + "px";
-        lamps.style.top = (originalTop - mouseDY / 200) + "px";
-        background.style.top = (originalTop - mouseDY / 400) + "px";
-        signboard.style.top = (originalTop - mouseDY / 400) + "px";
+        wild.style.top = (Math.floor(originalTop - mouseDY / 25)) + "px";
+        bar.style.top = (Math.floor(originalTop - mouseDY / 50)) + "px";
+        lamps.style.top = (Math.floor(originalTop - mouseDY / 200)) + "px";
+        background.style.top = (Math.floor(originalTop - mouseDY / 400)) + "px";
+        signboard.style.top = (Math.floor(originalTop - mouseDY / 400)) + "px";
     }
 
     let sprites = document.querySelectorAll('.scene__sprite');

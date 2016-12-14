@@ -529,7 +529,8 @@ body {
 
 .scene {
   position: relative;
-  width: 104%;
+  left: -2.5%;
+  width: 105%;
   height: 49.7vw;
   background-color: #000000; }
   .scene__background {
