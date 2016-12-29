@@ -7,17 +7,27 @@
 .scene {
     // positioning
     position: relative;
-    left: -2.5%;
+    left: -2%;
+    top: -3.2%;
 
     // box model
-    width: 105%;
+    width: 104%;
     height: 49.7vw;
     // margin: 0 auto;
     // border: 5px solid red;
 
     background-color: #000000;
 
+    &__canvas {
+        // box model
+        width: 100%;
+        height: 100%;
+        // visual
+        background-color: $darkCopy;
+    }
+
     &__background {
+        border: 1px solid red;
         // positioning
         position: absolute;
         // top: 50%;

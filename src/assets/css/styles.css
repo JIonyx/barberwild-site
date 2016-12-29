@@ -497,11 +497,8 @@ body {
     width: 1920px;
     margin: auto; }
   .hero__map {
-    width: 100%; }
-    .hero__map img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%; }
+    width: 100%;
+    height: 100%; }
   .hero__title {
     margin: 0;
     color: #ffffff;
@@ -529,11 +526,17 @@ body {
 
 .scene {
   position: relative;
-  left: -2.5%;
-  width: 105%;
+  left: -2%;
+  top: -3.2%;
+  width: 104%;
   height: 49.7vw;
   background-color: #000000; }
+  .scene__canvas {
+    width: 100%;
+    height: 100%;
+    background-color: #152026; }
   .scene__background {
+    border: 1px solid red;
     position: absolute;
     display: block;
     width: 100%; }

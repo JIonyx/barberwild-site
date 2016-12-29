@@ -1,3 +1,56 @@
+var sceneImages = [
+    {
+        name: "background",
+        x: 0, 
+        y: 0
+    },
+    {
+        name: "wild",
+        x: 0,
+        y: 0
+    },
+    {
+        name: "signboard",
+        x: 0,
+        y: 0
+    }
+
+];
+
+
+function newScene() {
+    var scene = document.querySelector('.scene');
+    var canvas = document.querySelector(".scene__canvas");
+    canvas.width = scene.offsetWidth;
+    canvas.height = scene.offsetHeight;
+
+    var context = canvas.getContext("2d");
+
+    var images = [];
+    for (let i = 0; i < sceneImages.length; i++) {
+        images.push({
+            image: document.querySelector('.scene__' + sceneImages[i].name),
+            x: sceneImages[i].x,
+            y: sceneImages[i].y
+        });
+    }
+
+
+    var x = 0;
+    let y = 0;
+
+    function draw() {
+        // requestAnimationFrame(draw);
+        // x++;
+        // context.fillStyle = "#ff0000";
+        // context.fillRect(x, 0, 200, 100);
+    }
+
+    draw();
+}
+
+newScene();
+
 function setupMainScene() {
     // Bar scene parallax
     let scene = document.querySelector('.scene');
